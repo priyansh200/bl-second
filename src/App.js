@@ -1,21 +1,24 @@
 import React from "react";
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar";
+import { BrowserRouter as rwt, Routes, Route } from "react-router-dom";
 
-//import "./output.css";
-//import Hero from "./components/Hero";
-//import Features from "./components/Features";
-//import Services from "./components/Services";
-//import Faq from "./components/Faq";
-//import Testimonials from "./components/Testimonials";
-//import Footer from "./components/Footer";
-
-
-const App = () => {
+function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar/>
-    </div>
+    <>
+      <Navbar />
+      <div>
+        <rwt>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </rwt>
+      </div>
+    </>
   );
-};
+}
 
 export default App;
